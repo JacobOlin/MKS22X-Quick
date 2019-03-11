@@ -5,15 +5,17 @@ public class Quick {
   public static int quickselect(int[]data,int k) {
     int start = 0;
     int end = data.length - 1;
-    int part = partition(data,start,end);
-    if (part < k) {
-      start = part + 1;
-    }
-    if (part > k) {
-      end = part - 1;
-    }
-    if (part == k) {
-      return data[k];
+    while (start < end) {
+      int part = partition(data,start,end);
+      if (part < k) {
+        start = part + 1;
+      }
+      if (part > k) {
+        end = part - 1;
+      }
+      if (part == k) {
+        return data[k];
+      }
     }
     return 0;
   }
