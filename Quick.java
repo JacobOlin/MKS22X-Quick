@@ -2,6 +2,10 @@ import java.util.Random;
 
 public class Quick {
 
+  public static int quickselect(int[]data,int k) {
+    return 0;
+  }
+
   public static int partition(int[] data,int start, int end) {
     if (start == end) {
       return end;
