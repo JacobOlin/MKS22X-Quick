@@ -5,7 +5,7 @@ public class Quick {
   public static int quickselect(int[]data,int k) {
     int start = 0;
     int end = data.length - 1;
-    while (start < end) {
+    while (start <= end) {
       int part = partition(data,start,end);
       if (part < k) {
         start = part + 1;
