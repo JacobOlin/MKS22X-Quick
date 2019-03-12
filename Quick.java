@@ -26,11 +26,12 @@ public class Quick {
     }
     //Random r  = new Random();
     //int index = start + Math.abs(r.nextInt()%(end - start + 1));
-    int index = start+end/2;
-    if ((data[start] < data[end] && data[start] > data[start+end/2]) || (data[start] > data[end] && data[start] < data[start+end/2])) {
+    int index = (start+end)/2;
+    //System.out.println(start + " " + end);
+    if ((data[start] < data[end] && data[start] > data[(start+end)/2]) || (data[start] > data[end] && data[start] < data[(start+end)/2])) {
       index = start;
     }
-    if ((data[end] < data[start]&& data[end] > data[start+end/2])||(data[end] > data[start]&& data[end]< data[start+end/2])) {
+    if ((data[end] < data[start]&& data[end] > data[(start+end)/2])||(data[end] > data[start]&& data[end]< data[(start+end)/2])) {
       index = end;
     }
 
@@ -46,6 +47,8 @@ public class Quick {
   }
 
   public static int recursive(int[] data,int start,int end,int pivotInd) {
+    Random r = new Random();
+    int randVal = Math.abs(r.nextInt()) % 2;
     if (start == end) {
       if (data[pivotInd] < data[start]) {
         int pivot = data[pivotInd];
@@ -58,7 +61,7 @@ public class Quick {
       data[start] = pivot;
       return start;
     }
-    if (data[start] >= data[pivotInd]) {
+    if (data[start] > data[pivotInd] || (data[start] == data[pivotInd] && randVal == 0)) {
       int change = data[start];
       data[start] = data[end];
       data[end] = change;
