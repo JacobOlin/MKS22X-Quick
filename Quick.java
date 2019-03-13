@@ -70,4 +70,12 @@ public class Quick {
     return recursive(data,start+1,end,pivotInd);
   }
 
+  public static void quicksort(int[] data) {
+
+  }
+
+  public static void quicksort(int[] data,int lo,int hi) {
+
+  }
+
 }
