@@ -71,7 +71,7 @@ public class Quick {
   }
 
   public static void quicksort(int[] data) {
-
+    quicksort(data,0,data.length - 1);
   }
 
   public static void quicksort(int[] data,int lo,int hi) {
