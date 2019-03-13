@@ -43,7 +43,32 @@ public class Quick {
       System.out.print(data[i] + " ");
     }
     System.out.println("Pivot "+ pivot);*/
-    return recursive(data,start+1,end,start);
+    //return recursive(data,start+1,end,start);
+    int pivotInd = start;
+    start += 1;
+    while (start < end) {
+      Random r = new Random();
+      int randVal = Math.abs(r.nextInt()) % 2;
+      if (data[start] > data[pivotInd] || (data[start] == data[pivotInd] && randVal == 0)) {
+        int change = data[start];
+        data[start] = data[end];
+        data[end] = change;
+        end -=1;
+      }
+      else {
+        start += 1;
+      }
+    }
+    if (data[pivotInd] < data[start]) {
+      pivot = data[pivotInd];
+      data[pivotInd] = data[start - 1];
+      data[start - 1] = pivot;
+      return start - 1;
+    }
+    pivot = data[pivotInd];
+    data[pivotInd] = data[start];
+    data[start] = pivot;
+    return start;
   }
 
   public static int recursive(int[] data,int start,int end,int pivotInd) {
