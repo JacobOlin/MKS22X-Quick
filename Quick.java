@@ -1,5 +1,5 @@
 import java.util.Random;
-
+import java.util.Arrays;
 public class Quick {
 
   public static int quickselect(int[]data,int k) {
@@ -24,16 +24,16 @@ public class Quick {
     if (start == end) {
       return end;
     }
-    //Random r  = new Random();
-    //int index = start + Math.abs(r.nextInt()%(end - start + 1));
-    int index = (start+end)/2;
+    Random r  = new Random();
+    int index = start + Math.abs(r.nextInt()%(end - start + 1));
+    /*int index = (start+end)/2;
     //System.out.println(start + " " + end);
     if ((data[start] < data[end] && data[start] > data[(start+end)/2]) || (data[start] > data[end] && data[start] < data[(start+end)/2])) {
       index = start;
     }
     if ((data[end] < data[start]&& data[end] > data[(start+end)/2])||(data[end] > data[start]&& data[end]< data[(start+end)/2])) {
       index = end;
-    }
+    }*/
 
     int pivot = data[index];
     data[index] = data[start];
@@ -47,7 +47,7 @@ public class Quick {
     int pivotInd = start;
     start += 1;
     while (start < end) {
-      Random r = new Random();
+      //Random r = new Random();
       int randVal = Math.abs(r.nextInt()) % 2;
       if (data[start] > data[pivotInd] || (data[start] == data[pivotInd] && randVal == 0)) {
         int change = data[start];
@@ -71,7 +71,7 @@ public class Quick {
     return start;
   }
 
-  public static int recursive(int[] data,int start,int end,int pivotInd) {
+  /*public static int recursive(int[] data,int start,int end,int pivotInd) {
     Random r = new Random();
     int randVal = Math.abs(r.nextInt()) % 2;
     if (start == end) {
@@ -93,7 +93,7 @@ public class Quick {
       return recursive(data,start,end - 1,pivotInd);
     }
     return recursive(data,start+1,end,pivotInd);
-  }
+  }*/
 
   public static void quicksort(int[] data) {
     quicksort(data,0,data.length - 1);
