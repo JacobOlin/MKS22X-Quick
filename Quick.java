@@ -25,15 +25,15 @@ public class Quick {
       return end;
     }
     Random r  = new Random();
-    int index = start + Math.abs(r.nextInt()%(end - start + 1));
-    /*int index = (start+end)/2;
+    //int index = start + Math.abs(r.nextInt()%(end - start + 1));
+    int index = (start+end)/2;
     //System.out.println(start + " " + end);
     if ((data[start] < data[end] && data[start] > data[(start+end)/2]) || (data[start] > data[end] && data[start] < data[(start+end)/2])) {
       index = start;
     }
     if ((data[end] < data[start]&& data[end] > data[(start+end)/2])||(data[end] > data[start]&& data[end]< data[(start+end)/2])) {
       index = end;
-    }*/
+    }
 
     int pivot = data[index];
     data[index] = data[start];
